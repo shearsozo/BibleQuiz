@@ -8,7 +8,11 @@ import android.widget.Button;
 
 public class Main9Activity extends AppCompatActivity {
     /**
-     * This method is call to navigates to next page when button is click.
+     * Variable to hold the amount of correct answers.
+     */
+    int correct = 0;
+    /**
+     * Method to navigate to next activity page when button is click.
      */
     public Button startover;
     public void gotopage(){
@@ -27,4 +31,35 @@ public class Main9Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main9);
         gotopage();
     }
+    /**
+     * Calculates the results of all questions
+     */
+    public void calculateResult() {
+        questionOne();
+        questionTwo();
+        questionThree();
+        questionFour();
+        questionFive();
+        questionSix();
+        questionSeven();
+    }
+    /**
+     * Method call when checkscore button is click
+     */
+    public void result(View view) {
+        calculateResult();
+        String result = "You got " + correct + "/7 correct!";
+    }
+    /**
+     * Toast message appears when checkscore button is click
+     */
+
+    /**
+     * Method uncheck all check answers and clear all editText, and reset correct variable to 0
+     */
+    public void startover(View view) {
+        correct = 0;
+
+    }
+
 }

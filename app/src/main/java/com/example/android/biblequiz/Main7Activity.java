@@ -5,10 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class Main7Activity extends AppCompatActivity {
     /**
-     * This method is call to navigates to next page when button is click.
+     * Method to navigate to next activity page when button is click.
      */
     public Button next6;
     public void gotopage(){
@@ -26,5 +27,16 @@ public class Main7Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main7);
         gotopage();
+    }
+    /**
+     * Method to record correct answer for question 6.
+     */
+    public void questionSix() {
+        EditText q6_correct = findViewById(R.id.answer4);
+        String user_answer6 = q6_correct.getText().toString();
+
+        if (user_answer6.equals("world")) {
+
+        }
     }
 }
