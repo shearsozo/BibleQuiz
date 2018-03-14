@@ -52,10 +52,12 @@ public class Main9Activity extends AppCompatActivity {
     }
     /**
      * Toast message appears when checkscore button is click
+     * need help here
      */
 
     /**
      * Method uncheck all check answers and clear all editText, and reset correct variable to 0
+     * need help here
      */
     public void startover(View view) {
         correct = 0;
