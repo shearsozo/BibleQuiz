@@ -39,6 +39,7 @@
             android:textSize="@dimen/question_text"
             />
         <RadioGroup
+            android:id="@+id/rgAnswer1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/question_margin_h"
@@ -77,7 +78,12 @@
             android:layout_gravity="center"
             android:orientation="horizontal"
             >
-
+            <Button
+                android:id="@+id/previous1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="previous"
+                />
             <Button
                 android:id="@+id/next1"
                 android:layout_width="wrap_content"
