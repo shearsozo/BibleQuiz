@@ -57,7 +57,9 @@ public class Main7Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main7);
         q6_correct = findViewById(R.id.answer6);
         loadAnswerFromMyIntend();
-        if(answer6 !=null)
+        if(answer6 !=null){
+            q6_correct.setText(answer4);
+        }
             gotopage();
     }
     /**
@@ -65,6 +67,7 @@ public class Main7Activity extends AppCompatActivity {
      */
     public void questionSix() {
         EditText q6_correct = findViewById(R.id.answer6);
+        answer6 = q6_correct.getText().toString();
         String user_answer6 = q6_correct.getText().toString();
 
         if (user_answer6.equalsIgnoreCase("world")) {

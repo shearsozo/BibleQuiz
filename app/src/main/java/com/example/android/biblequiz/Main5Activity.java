@@ -58,7 +58,9 @@ public class Main5Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main5);
         q4_correct = findViewById(R.id.answer4);
         loadAnswerFromMyIntend();
-        if(answer4 !=null)
+        if(answer4 !=null){
+            q4_correct.setText(answer4);
+        }
         gotopage();
     }
     /**
@@ -66,6 +68,7 @@ public class Main5Activity extends AppCompatActivity {
      */
     public void questionFour() {
         EditText q4_correct = findViewById(R.id.answer4);
+        answer4 = q4_correct.getText().toString();
         String user_answer4 = q4_correct.getText().toString();
 
         if (user_answer4.equalsIgnoreCase("God")) {
