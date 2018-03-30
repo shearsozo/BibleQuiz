@@ -47,13 +47,7 @@
             android:layout_gravity="center"
             android:orientation="horizontal"
             >
-            <Button
-                android:id="@+id/checkscore"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Check Score"
-                android:onClick="result"
-                />
+
             <Button
                 android:id="@+id/startover"
                 android:layout_width="wrap_content"

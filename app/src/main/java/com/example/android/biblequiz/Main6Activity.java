@@ -57,9 +57,9 @@ public class Main6Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main6);
+        // only checkbox a, b, d is correct
         q5a_correct = findViewById(R.id.checkanswer5a);
         q5b_correct = findViewById(R.id.checkanswer5b);
-        q5c_correct = findViewById(R.id.checkanswer5c);
         q5d_correct = findViewById(R.id.checkanswer5d);
         /**
          * reload the answer from intend
@@ -105,6 +105,7 @@ public class Main6Activity extends AppCompatActivity {
      * using something like "1|2|4" .
      * This way, when you calculate score for checkbox, you only need to check
      * if the string matches with your answer.
+     * In this case only checkbox c is the only not correct.
      */
     public String getCheckBoxAnswers(){
         String q5Answer = "";
@@ -113,8 +114,6 @@ public class Main6Activity extends AppCompatActivity {
         q5Answer = q5Answer + "|";
         if(q5b_correct.isChecked())
             q5Answer = q5Answer + "2";
-        if(q5c_correct.isChecked())
-            q5Answer = q5Answer + "3";
         q5Answer = q5Answer + "|";
         if(q5d_correct.isChecked())
             q5Answer = q5Answer + "4";

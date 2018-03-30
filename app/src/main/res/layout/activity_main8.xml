@@ -88,7 +88,7 @@
                 android:id="@+id/next7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="next"
+                android:text="finish"
                 />
         </LinearLayout>
 

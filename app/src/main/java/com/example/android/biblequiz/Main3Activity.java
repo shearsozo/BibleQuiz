@@ -114,6 +114,7 @@ public class Main3Activity extends AppCompatActivity {
         q2Answer = q2Answer + "|";
         if(q2b_correct.isChecked())
             q2Answer = q2Answer + "2";
+        q2Answer = q2Answer + "|";
         if(q2c_correct.isChecked())
             q2Answer = q2Answer + "3";
         q2Answer = q2Answer + "|";

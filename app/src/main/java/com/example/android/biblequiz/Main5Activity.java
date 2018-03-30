@@ -69,7 +69,6 @@ public class Main5Activity extends AppCompatActivity {
     public void questionFour() {
         EditText q4_correct = findViewById(R.id.answer4);
         answer4 = q4_correct.getText().toString();
-        String user_answer4 = q4_correct.getText().toString();
 
         if (user_answer4.equalsIgnoreCase("God")) {
         }

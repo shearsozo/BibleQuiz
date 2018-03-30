@@ -39,6 +39,7 @@ public class Main8Activity extends AppCompatActivity {
             public void onClick(View view) {
                 //get the index of the checked radio group and cast to string
                 answer7 = String.valueOf(getRadioButtonSelection(q7_rGroup));
+
                 Intent agape = new Intent(Main8Activity.this,Main9Activity.class);
                 dressUpIntent(agape);
             }
@@ -59,8 +60,7 @@ public class Main8Activity extends AppCompatActivity {
         q7_rGroup = findViewById(R.id.rgAnswer7);
         loadAnswerFromMyIntend();
         /*
-        If answer7 has some answer, then preselect.
-
+        If answer7 has some answer, then preselect
          */
         if(answer7 != null){
             int intAnswer1 = Integer.parseInt(answer7);
