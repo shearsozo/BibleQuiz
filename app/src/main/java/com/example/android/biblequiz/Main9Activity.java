@@ -57,7 +57,7 @@ public class Main9Activity extends AppCompatActivity {
     }
 
     /**
-     * Toast message
+     * pop up toast message
      */
     private void popToast(String msg) {
         Context context = getApplicationContext();
@@ -72,7 +72,15 @@ public class Main9Activity extends AppCompatActivity {
         //if the answer for the first question is the third radio button, then increment by 1
         if(Integer.valueOf(answer1)==3)
             myResult++;
+        if(answer2.equals("1|2|3|4"))
+            myResult++;
         if(Integer.valueOf(answer3)==2)
+            myResult++;
+        if (answer4.equalsIgnoreCase("God"))
+            myResult++;
+        if(answer5.equals("1|2||4"))
+            myResult++;
+        if (answer6.equalsIgnoreCase("world"))
             myResult++;
         if(Integer.valueOf(answer7)==4)
             myResult++;
