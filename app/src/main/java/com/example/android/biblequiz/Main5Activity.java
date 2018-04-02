@@ -3,6 +3,7 @@ package com.example.android.biblequiz;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,8 +37,15 @@ public class Main5Activity extends AppCompatActivity {
         next4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                answer4 = String.valueOf(user_answer4);
+
                 questionFour();
+                Log.v("set_answer", "answer1:" + answer1);
+                Log.v("set_answer", "answer2:" + answer2);
+                Log.v("set_answer", "answer3:" + answer3);
+                Log.v("set_answer", "answer4:" + answer4);
+                Log.v("set_answer", "answer5:" + answer5);
+                Log.v("set_answer", "answer6:" + answer6);
+                Log.v("set_answer", "answer7:" + answer7);
                 Intent agape = new Intent(Main5Activity.this,Main6Activity.class);
                 dressUpIntent(agape);
             }
@@ -45,8 +53,15 @@ public class Main5Activity extends AppCompatActivity {
         previous4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                answer4 = String.valueOf(user_answer4);
+
                 questionFour();
+                Log.v("set_answer", "answer1:" + answer1);
+                Log.v("set_answer", "answer2:" + answer2);
+                Log.v("set_answer", "answer3:" + answer3);
+                Log.v("set_answer", "answer4:" + answer4);
+                Log.v("set_answer", "answer5:" + answer5);
+                Log.v("set_answer", "answer6:" + answer6);
+                Log.v("set_answer", "answer7:" + answer7);
                 Intent agape = new Intent(Main5Activity.this,Main4Activity.class);
                 dressUpIntent(agape);
             }
@@ -57,7 +72,15 @@ public class Main5Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main5);
         q4_correct = findViewById(R.id.answer4);
+        Log.v("load_answer", "load from intent at main5");
         loadAnswerFromMyIntend();
+        Log.v("load_answer", "answer1:" + answer1);
+        Log.v("load_answer", "answer2:" + answer2);
+        Log.v("load_answer", "answer3:" + answer3);
+        Log.v("load_answer", "answer4:" + answer4);
+        Log.v("load_answer", "answer5:" + answer5);
+        Log.v("load_answer", "answer6:" + answer6);
+        Log.v("load_answer", "answer7:" + answer7);
         if(answer4 !=null){
             q4_correct.setText(answer4);
         }
@@ -70,8 +93,7 @@ public class Main5Activity extends AppCompatActivity {
         EditText q4_correct = findViewById(R.id.answer4);
         answer4 = q4_correct.getText().toString();
 
-        if (user_answer4.equalsIgnoreCase("God")) {
-        }
+
     }
     /**
      This function will put all 7 answers into intent using the following syntax

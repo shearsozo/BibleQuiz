@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -33,12 +34,14 @@ public class Main9Activity extends AppCompatActivity {
      */
     public Button startover;
     public void gotopage(){
+        Log.v("start_button", "function called");
         startover= (Button)findViewById(R.id.startover);
         startover.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Intent agape = new Intent(Main9Activity.this,MainActivity.class);
+                Log.v("start_button", "I have pressed my start button");
                 startActivity(agape);
             }
         });
@@ -47,13 +50,22 @@ public class Main9Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main9);
+        Log.v("load_answer", "load from intent at main9");
         loadAnswerFromMyIntend();
+        Log.v("load_answer", "answer1:" + answer1);
+        Log.v("load_answer", "answer2:" + answer2);
+        Log.v("load_answer", "answer3:" + answer3);
+        Log.v("load_answer", "answer4:" + answer4);
+        Log.v("load_answer", "answer5:" + answer5);
+        Log.v("load_answer", "answer6:" + answer6);
+        Log.v("load_answer", "answer7:" + answer7);
         /**
          * Method to calculate score
          */
         correct = calculateFinalScore();
         String scoreMessage = "You got " + Integer.toString(correct) + "/7 correct!";
         popToast(scoreMessage);
+        gotopage();
     }
 
     /**
@@ -70,11 +82,12 @@ public class Main9Activity extends AppCompatActivity {
     public int calculateFinalScore(){
         int myResult = 0;
         //if the answer for the first question is the third radio button, then increment by 1
-        if(Integer.valueOf(answer1)==3)
+        //radio button answers are index position which starts from 0
+        if(Integer.valueOf(answer1)==2)
             myResult++;
         if(answer2.equals("1|2|3|4"))
             myResult++;
-        if(Integer.valueOf(answer3)==2)
+        if(Integer.valueOf(answer3)==1)
             myResult++;
         if (answer4.equalsIgnoreCase("God"))
             myResult++;
@@ -82,7 +95,7 @@ public class Main9Activity extends AppCompatActivity {
             myResult++;
         if (answer6.equalsIgnoreCase("world"))
             myResult++;
-        if(Integer.valueOf(answer7)==4)
+        if(Integer.valueOf(answer7)==3)
             myResult++;
         return myResult;
     }

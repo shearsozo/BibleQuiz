@@ -3,6 +3,7 @@ package com.example.android.biblequiz;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -41,6 +42,13 @@ public class Main3Activity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 answer2 = getCheckBoxAnswers();
+                Log.v("set_answer", "answer1:" + answer1);
+                Log.v("set_answer", "answer2:" + answer2);
+                Log.v("set_answer", "answer3:" + answer3);
+                Log.v("set_answer", "answer4:" + answer4);
+                Log.v("set_answer", "answer5:" + answer5);
+                Log.v("set_answer", "answer6:" + answer6);
+                Log.v("set_answer", "answer7:" + answer7);
                 Intent agape = new Intent(Main3Activity.this,Main4Activity.class);
                 dressUpIntent(agape);
             }
@@ -49,6 +57,13 @@ public class Main3Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 answer2 = getCheckBoxAnswers();
+                Log.v("set_answer", "answer1:" + answer1);
+                Log.v("set_answer", "answer2:" + answer2);
+                Log.v("set_answer", "answer3:" + answer3);
+                Log.v("set_answer", "answer4:" + answer4);
+                Log.v("set_answer", "answer5:" + answer5);
+                Log.v("set_answer", "answer6:" + answer6);
+                Log.v("set_answer", "answer7:" + answer7);
                 Intent agape = new Intent(Main3Activity.this,Main2Activity.class);
                 dressUpIntent(agape);
             }
@@ -65,7 +80,15 @@ public class Main3Activity extends AppCompatActivity {
         /**
          * reload the answer from intend
          */
+        Log.v("load_answer", "load from intent at main3");
         loadAnswerFromMyIntend();
+        Log.v("load_answer", "answer1:" + answer1);
+        Log.v("load_answer", "answer2:" + answer2);
+        Log.v("load_answer", "answer3:" + answer3);
+        Log.v("load_answer", "answer4:" + answer4);
+        Log.v("load_answer", "answer5:" + answer5);
+        Log.v("load_answer", "answer6:" + answer6);
+        Log.v("load_answer", "answer7:" + answer7);
         if(answer2 !=null) reloadCheckBoxFromUserAnswer(answer2);
         gotopage();
     }
