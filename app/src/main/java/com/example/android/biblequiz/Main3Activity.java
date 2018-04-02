@@ -35,12 +35,13 @@ public class Main3Activity extends AppCompatActivity {
      */
     public Button next2;
     public Button previous2;
-    public void gotopage(){
-        next2= (Button)findViewById(R.id.next2);
-        previous2= (Button)findViewById(R.id.previous2);
-        next2.setOnClickListener(new View.OnClickListener(){
+
+    public void gotopage() {
+        next2 = (Button) findViewById(R.id.next2);
+        previous2 = (Button) findViewById(R.id.previous2);
+        next2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
                 answer2 = getCheckBoxAnswers();
                 Log.v("set_answer", "answer1:" + answer1);
                 Log.v("set_answer", "answer2:" + answer2);
@@ -49,7 +50,7 @@ public class Main3Activity extends AppCompatActivity {
                 Log.v("set_answer", "answer5:" + answer5);
                 Log.v("set_answer", "answer6:" + answer6);
                 Log.v("set_answer", "answer7:" + answer7);
-                Intent agape = new Intent(Main3Activity.this,Main4Activity.class);
+                Intent agape = new Intent(Main3Activity.this, Main4Activity.class);
                 dressUpIntent(agape);
             }
         });
@@ -64,11 +65,12 @@ public class Main3Activity extends AppCompatActivity {
                 Log.v("set_answer", "answer5:" + answer5);
                 Log.v("set_answer", "answer6:" + answer6);
                 Log.v("set_answer", "answer7:" + answer7);
-                Intent agape = new Intent(Main3Activity.this,Main2Activity.class);
+                Intent agape = new Intent(Main3Activity.this, Main2Activity.class);
                 dressUpIntent(agape);
             }
         });
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,31 +91,33 @@ public class Main3Activity extends AppCompatActivity {
         Log.v("load_answer", "answer5:" + answer5);
         Log.v("load_answer", "answer6:" + answer6);
         Log.v("load_answer", "answer7:" + answer7);
-        if(answer2 !=null) reloadCheckBoxFromUserAnswer(answer2);
+        if (answer2 != null) reloadCheckBoxFromUserAnswer(answer2);
         gotopage();
     }
+
     /**
-     This function will put all 7 answers into intent using the following syntax
-     myIntend.putExtra(“key”, “value”) //both key and value are string types
-     then calling this when you go to both next page and previous page
-     startActivity(myIntent);
+     * This function will put all 7 answers into intent using the following syntax
+     * myIntend.putExtra(“key”, “value”) //both key and value are string types
+     * then calling this when you go to both next page and previous page
+     * startActivity(myIntent);
      */
-    public void dressUpIntent(Intent vMyIntend){
+    public void dressUpIntent(Intent vMyIntend) {
         //putting my key value pair
         //for example, key for first item is "answer1 and the value that variable answer1 holds
-        vMyIntend.putExtra("answer1",    answer1);
-        vMyIntend.putExtra("answer2",    answer2);
-        vMyIntend.putExtra("answer3",    answer3);
-        vMyIntend.putExtra("answer4",    answer4);
-        vMyIntend.putExtra("answer5",    answer5);
-        vMyIntend.putExtra("answer6",    answer6);
-        vMyIntend.putExtra("answer7",    answer7);
+        vMyIntend.putExtra("answer1", answer1);
+        vMyIntend.putExtra("answer2", answer2);
+        vMyIntend.putExtra("answer3", answer3);
+        vMyIntend.putExtra("answer4", answer4);
+        vMyIntend.putExtra("answer5", answer5);
+        vMyIntend.putExtra("answer6", answer6);
+        vMyIntend.putExtra("answer7", answer7);
         startActivity(vMyIntend);
     }
+
     /**
-     load the answer from each intend
+     * load the answer from each intend
      */
-    public void loadAnswerFromMyIntend(){
+    public void loadAnswerFromMyIntend() {
         answer1 = getIntent().getStringExtra("answer1");
         answer2 = getIntent().getStringExtra("answer2");
         answer3 = getIntent().getStringExtra("answer3");
@@ -122,6 +126,7 @@ public class Main3Activity extends AppCompatActivity {
         answer6 = getIntent().getStringExtra("answer6");
         answer7 = getIntent().getStringExtra("answer7");
     }
+
     /**
      * check if each checkbox is checked, if so, concatenate the answer.
      * i.e. if checkbox1 is checked, then you have "1" and so on.
@@ -130,38 +135,40 @@ public class Main3Activity extends AppCompatActivity {
      * This way, when you calculate score for checkbox, you only need to check
      * if the string matches with your answer.
      */
-    public String getCheckBoxAnswers(){
+    public String getCheckBoxAnswers() {
         String q2Answer = "";
-        if(q2a_correct.isChecked())
+        if (q2a_correct.isChecked())
             q2Answer = "1";
         q2Answer = q2Answer + "|";
-        if(q2b_correct.isChecked())
+        if (q2b_correct.isChecked())
             q2Answer = q2Answer + "2";
         q2Answer = q2Answer + "|";
-        if(q2c_correct.isChecked())
+        if (q2c_correct.isChecked())
             q2Answer = q2Answer + "3";
         q2Answer = q2Answer + "|";
-        if(q2d_correct.isChecked())
+        if (q2d_correct.isChecked())
             q2Answer = q2Answer + "4";
         return q2Answer;
     }
+
     /**
      * This method takes in a checkbox and user's answer string "1|2||4"
      * if user previously check answer 1, 2 and 4,
      * and check against the questionIndex, which is the specific answer choice,
      * and checks the checkbox if it exist.
      */
-    public void markCheckBoxSelection(CheckBox vMyCheckBox, String userAnswer, String answerIndex){
+    public void markCheckBoxSelection(CheckBox vMyCheckBox, String userAnswer, String answerIndex) {
         if (userAnswer.contains(answerIndex)) vMyCheckBox.setChecked(true);
     }
+
     /**
      * This method will use the markCheckBoxSelection to check against all the checkboxes
      */
-    public void reloadCheckBoxFromUserAnswer(String userAnswer){
-        markCheckBoxSelection(q2a_correct, userAnswer, "1" );
-        markCheckBoxSelection(q2b_correct, userAnswer, "2" );
-        markCheckBoxSelection(q2c_correct, userAnswer, "3" );
-        markCheckBoxSelection(q2d_correct, userAnswer, "4" );
+    public void reloadCheckBoxFromUserAnswer(String userAnswer) {
+        markCheckBoxSelection(q2a_correct, userAnswer, "1");
+        markCheckBoxSelection(q2b_correct, userAnswer, "2");
+        markCheckBoxSelection(q2c_correct, userAnswer, "3");
+        markCheckBoxSelection(q2d_correct, userAnswer, "4");
     }
 
 }

@@ -13,10 +13,13 @@ import android.widget.Toast;
 
 public class Main2Activity extends AppCompatActivity {
     /**
+     * Method to navigate to next activity page when button is click.
+     */
+    public Button next1;
+    /**
      * Variable to hold the amount of correct answers.
      */
     int correct = 0;
-
     RadioButton q1_correct;
     RadioGroup q1_rGroup;
     //Declare placeholder for user answer
@@ -28,12 +31,8 @@ public class Main2Activity extends AppCompatActivity {
     String answer6;
     String answer7;
 
-    /**
-     * Method to navigate to next activity page when button is click.
-     */
-    public Button next1;
-    public void gotopage(){
-        next1= (Button)findViewById(R.id.next1);
+    public void gotopage() {
+        next1 = (Button) findViewById(R.id.next1);
         next1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,11 +46,12 @@ public class Main2Activity extends AppCompatActivity {
                 Log.v("set_answer", "answer6:" + answer6);
                 Log.v("set_answer", "answer7:" + answer7);
 
-                Intent agape = new Intent(Main2Activity.this,Main3Activity.class);
+                Intent agape = new Intent(Main2Activity.this, Main3Activity.class);
                 dressUpIntent(agape);
             }
         });
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,25 +72,20 @@ public class Main2Activity extends AppCompatActivity {
         /*
         If answer1 has some answer, then preselect.
          */
-        if(answer1 != null){
+        if (answer1 != null) {
             int intAnswer1 = Integer.parseInt(answer1);
             setRadioButtonByIndex(q1_rGroup, intAnswer1);
         }
-
         gotopage();
-
-
     }
-
-
 
     /**
      * Method to record correct answer for question 1.
      */
     public void questionOne() {
-        RadioButton q1_correct = findViewById (R.id.answer1);
+        RadioButton q1_correct = findViewById(R.id.answer1);
 
-        if (q1_correct.isChecked ()) {
+        if (q1_correct.isChecked()) {
             correct++;
         }
     }
@@ -99,7 +94,7 @@ public class Main2Activity extends AppCompatActivity {
      Pass in the radio button group reference and return the index of the checked radio button
      This index will be used as the answer
      */
-    public int getRadioButtonSelection(RadioGroup vMyRGroup){
+    public int getRadioButtonSelection(RadioGroup vMyRGroup) {
         int index = vMyRGroup.indexOfChild(findViewById(vMyRGroup.getCheckedRadioButtonId()));
         return index;
 
@@ -108,8 +103,8 @@ public class Main2Activity extends AppCompatActivity {
     /*
     Pass in the radio button group reference as well as the index of the radio button to check and set it
      */
-    public void setRadioButtonByIndex(RadioGroup vMyRGroup, int checkedIndex){
-        ((RadioButton)vMyRGroup.getChildAt(checkedIndex)).setChecked(true);
+    public void setRadioButtonByIndex(RadioGroup vMyRGroup, int checkedIndex) {
+        ((RadioButton) vMyRGroup.getChildAt(checkedIndex)).setChecked(true);
     }
 
     /*
@@ -118,23 +113,23 @@ public class Main2Activity extends AppCompatActivity {
     then called calling this when you go to both next page and previous page
     startActivity(myIntent);
     */
-    public void dressUpIntent(Intent vMyIntend){
+    public void dressUpIntent(Intent vMyIntend) {
         //putting my key value pair
         //for example, key for first item is "answer1" and the value that variable answer1 holds
-        vMyIntend.putExtra("answer1",    answer1);
-        vMyIntend.putExtra("answer2",    answer2);
-        vMyIntend.putExtra("answer3",    answer3);
-        vMyIntend.putExtra("answer4",    answer4);
-        vMyIntend.putExtra("answer5",    answer5);
-        vMyIntend.putExtra("answer6",    answer6);
-        vMyIntend.putExtra("answer7",    answer7);
+        vMyIntend.putExtra("answer1", answer1);
+        vMyIntend.putExtra("answer2", answer2);
+        vMyIntend.putExtra("answer3", answer3);
+        vMyIntend.putExtra("answer4", answer4);
+        vMyIntend.putExtra("answer5", answer5);
+        vMyIntend.putExtra("answer6", answer6);
+        vMyIntend.putExtra("answer7", answer7);
         startActivity(vMyIntend);
     }
 
     /*
         load the answer from each intend
      */
-    public void loadAnswerFromMyIntend(){
+    public void loadAnswerFromMyIntend() {
         answer1 = getIntent().getStringExtra("answer1");
         answer2 = getIntent().getStringExtra("answer2");
         answer3 = getIntent().getStringExtra("answer3");

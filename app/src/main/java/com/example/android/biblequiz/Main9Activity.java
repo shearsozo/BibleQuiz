@@ -15,6 +15,10 @@ import android.widget.Toast;
 
 public class Main9Activity extends AppCompatActivity {
     /**
+     * Method to reset and navigate to first activity page when button is click.
+     */
+    public Button startover;
+    /**
      * Variable to hold the amount of correct answers.
      */
     int correct = 0;
@@ -29,23 +33,20 @@ public class Main9Activity extends AppCompatActivity {
     String answer6;
     String answer7;
 
-    /**
-     * Method to reset and navigate to first activity page when button is click.
-     */
-    public Button startover;
-    public void gotopage(){
+    public void gotopage() {
         Log.v("start_button", "function called");
-        startover= (Button)findViewById(R.id.startover);
+        startover = (Button) findViewById(R.id.startover);
         startover.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent agape = new Intent(Main9Activity.this,MainActivity.class);
+                Intent agape = new Intent(Main9Activity.this, MainActivity.class);
                 Log.v("start_button", "I have pressed my start button");
                 startActivity(agape);
             }
         });
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,35 +77,35 @@ public class Main9Activity extends AppCompatActivity {
         CharSequence text = msg;
         int duration = Toast.LENGTH_LONG;
         Toast toast = Toast.makeText(context, text, duration);
-        toast.show();}
+        toast.show();
+    }
 
     //here's how to check score
-    public int calculateFinalScore(){
+    public int calculateFinalScore() {
         int myResult = 0;
         //if the answer for the first question is the third radio button, then increment by 1
         //radio button answers are index position which starts from 0
-        if(Integer.valueOf(answer1)==2)
+        if (Integer.valueOf(answer1) == 2)
             myResult++;
-        if(answer2.equals("1|2|3|4"))
+        if (answer2.equals("1|2|3|4"))
             myResult++;
-        if(Integer.valueOf(answer3)==1)
+        if (Integer.valueOf(answer3) == 1)
             myResult++;
         if (answer4.equalsIgnoreCase("God"))
             myResult++;
-        if(answer5.equals("1|2||4"))
+        if (answer5.equals("1|2||4"))
             myResult++;
         if (answer6.equalsIgnoreCase("world"))
             myResult++;
-        if(Integer.valueOf(answer7)==3)
+        if (Integer.valueOf(answer7) == 3)
             myResult++;
         return myResult;
     }
 
-
     /**
      * reload answers from intent
      */
-    public void loadAnswerFromMyIntend(){
+    public void loadAnswerFromMyIntend() {
         answer1 = getIntent().getStringExtra("answer1");
         answer2 = getIntent().getStringExtra("answer2");
         answer3 = getIntent().getStringExtra("answer3");
@@ -113,6 +114,4 @@ public class Main9Activity extends AppCompatActivity {
         answer6 = getIntent().getStringExtra("answer6");
         answer7 = getIntent().getStringExtra("answer7");
     }
-
-
 }

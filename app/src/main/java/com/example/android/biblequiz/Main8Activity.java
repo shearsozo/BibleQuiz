@@ -26,7 +26,6 @@ public class Main8Activity extends AppCompatActivity {
     String answer5;
     String answer6;
     String answer7;
-
     /**
      * Method to navigate to different activity page when button is click.
      */

@@ -31,9 +31,10 @@ public class Main5Activity extends AppCompatActivity {
      */
     public Button next4;
     public Button previous4;
-    public void gotopage(){
-        next4= (Button)findViewById(R.id.next4);
-        previous4= (Button)findViewById(R.id.previous4);
+
+    public void gotopage() {
+        next4 = (Button) findViewById(R.id.next4);
+        previous4 = (Button) findViewById(R.id.previous4);
         next4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,7 +47,7 @@ public class Main5Activity extends AppCompatActivity {
                 Log.v("set_answer", "answer5:" + answer5);
                 Log.v("set_answer", "answer6:" + answer6);
                 Log.v("set_answer", "answer7:" + answer7);
-                Intent agape = new Intent(Main5Activity.this,Main6Activity.class);
+                Intent agape = new Intent(Main5Activity.this, Main6Activity.class);
                 dressUpIntent(agape);
             }
         });
@@ -62,11 +63,12 @@ public class Main5Activity extends AppCompatActivity {
                 Log.v("set_answer", "answer5:" + answer5);
                 Log.v("set_answer", "answer6:" + answer6);
                 Log.v("set_answer", "answer7:" + answer7);
-                Intent agape = new Intent(Main5Activity.this,Main4Activity.class);
+                Intent agape = new Intent(Main5Activity.this, Main4Activity.class);
                 dressUpIntent(agape);
             }
         });
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,42 +83,43 @@ public class Main5Activity extends AppCompatActivity {
         Log.v("load_answer", "answer5:" + answer5);
         Log.v("load_answer", "answer6:" + answer6);
         Log.v("load_answer", "answer7:" + answer7);
-        if(answer4 !=null){
+        if (answer4 != null) {
             q4_correct.setText(answer4);
         }
         gotopage();
     }
+
     /**
      * Method to record correct answer for question 4.
      */
     public void questionFour() {
         EditText q4_correct = findViewById(R.id.answer4);
         answer4 = q4_correct.getText().toString();
-
-
     }
+
     /**
-     This function will put all 7 answers into intent using the following syntax
-     myIntend.putExtra(“key”, “value”) //both key and value are string types
-     then called calling this when you go to both next page and previous page
-     startActivity(myIntent);
+     * This function will put all 7 answers into intent using the following syntax
+     * myIntend.putExtra(“key”, “value”) //both key and value are string types
+     * then called calling this when you go to both next page and previous page
+     * startActivity(myIntent);
      */
-    public void dressUpIntent(Intent vMyIntend){
+    public void dressUpIntent(Intent vMyIntend) {
         //putting my key value pair
         //for example, key for first item is "answer1 and the value that variable answer1 holds
-        vMyIntend.putExtra("answer1",    answer1);
-        vMyIntend.putExtra("answer2",    answer2);
-        vMyIntend.putExtra("answer3",    answer3);
-        vMyIntend.putExtra("answer4",    answer4);
-        vMyIntend.putExtra("answer5",    answer5);
-        vMyIntend.putExtra("answer6",    answer6);
-        vMyIntend.putExtra("answer7",    answer7);
+        vMyIntend.putExtra("answer1", answer1);
+        vMyIntend.putExtra("answer2", answer2);
+        vMyIntend.putExtra("answer3", answer3);
+        vMyIntend.putExtra("answer4", answer4);
+        vMyIntend.putExtra("answer5", answer5);
+        vMyIntend.putExtra("answer6", answer6);
+        vMyIntend.putExtra("answer7", answer7);
         startActivity(vMyIntend);
     }
+
     /**
-     load the answer from each intend
+     * load the answer from each intend
      */
-    public void loadAnswerFromMyIntend(){
+    public void loadAnswerFromMyIntend() {
         answer1 = getIntent().getStringExtra("answer1");
         answer2 = getIntent().getStringExtra("answer2");
         answer3 = getIntent().getStringExtra("answer3");
