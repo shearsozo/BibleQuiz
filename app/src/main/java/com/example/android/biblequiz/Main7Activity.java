@@ -58,7 +58,7 @@ public class Main7Activity extends AppCompatActivity {
         q6_correct = findViewById(R.id.answer6);
         loadAnswerFromMyIntend();
         if(answer6 !=null){
-            q6_correct.setText(answer4);
+            q6_correct.setText(answer6);
         }
             gotopage();
     }

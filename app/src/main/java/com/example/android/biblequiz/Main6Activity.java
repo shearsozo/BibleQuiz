@@ -60,6 +60,7 @@ public class Main6Activity extends AppCompatActivity {
         // only checkbox a, b, d is correct
         q5a_correct = findViewById(R.id.checkanswer5a);
         q5b_correct = findViewById(R.id.checkanswer5b);
+        q5c_correct = findViewById(R.id.checkanswer5c);
         q5d_correct = findViewById(R.id.checkanswer5d);
         /**
          * reload the answer from intend
@@ -114,6 +115,9 @@ public class Main6Activity extends AppCompatActivity {
         q5Answer = q5Answer + "|";
         if(q5b_correct.isChecked())
             q5Answer = q5Answer + "2";
+        q5Answer = q5Answer + "|";
+        if(q5c_correct.isChecked())
+            q5Answer = q5Answer + "3";
         q5Answer = q5Answer + "|";
         if(q5d_correct.isChecked())
             q5Answer = q5Answer + "4";
