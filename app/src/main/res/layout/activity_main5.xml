@@ -58,13 +58,13 @@
                 android:id="@+id/previous4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="previous"
+                android:text="@string/buttonPrev"
                 />
             <Button
                 android:id="@+id/next4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="next"
+                android:text="@string/buttonNext"
                 />
         </LinearLayout>
 

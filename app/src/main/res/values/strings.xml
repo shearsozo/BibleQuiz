@@ -12,7 +12,7 @@
     <string name="question1">Who started putting Bible in hotel rooms?</string>
     <string name="question2">Famous men or women who believed in the Bible</string>
     <string name="question3">Which blockbuster movie heavily draws from the Bible?</string>
-    <string name="question4">The Bible is known as the inspired word of ___</string>
+    <string name="question4">The Bible is known as the inerrant word of ___</string>
     <string name="question5">What form of documents are in the Bible?</string>
     <string name="question6">The Bible is the best-selling book in the _____</string>
     <string name="question7">Who was buried with a stalk of marijuana, Gibson Les Paul guitar, and a Bible?</string>
@@ -39,4 +39,8 @@
     <string name="answer7b">Jimmy Hendrix</string>
     <string name="answer7c">Pete Townshend</string>
     <string name="answer7d">Bob Marley</string>
+    <string name="buttonPrev">previous</string>
+    <string name="buttonNext">next</string>
+    <string name="buttonFinish">finish</string>
+    <string name="buttonStartOver">start over</string>
 </resources>

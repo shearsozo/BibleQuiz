@@ -81,13 +81,13 @@
                 android:id="@+id/previous7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="previous" />
+                android:text="@string/buttonPrev" />
 
             <Button
                 android:id="@+id/next7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="finish" />
+                android:text="@string/buttonFinish" />
         </LinearLayout>
 
     </LinearLayout>
