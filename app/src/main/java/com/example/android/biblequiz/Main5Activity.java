@@ -1,12 +1,14 @@
 package com.example.android.biblequiz;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class Main5Activity extends AppCompatActivity {
     /**
@@ -87,6 +89,15 @@ public class Main5Activity extends AppCompatActivity {
             q4_correct.setText(answer4);
         }
         gotopage();
+    }
+
+    /**
+     * This method is called when the answer button is clicked.
+     */
+    public void showAnswer(View view) {
+        TextView textView = (TextView) findViewById(R.id.show_text_view);
+        textView.setText("God");
+        textView.setTextColor(Color.RED);
     }
 
     /**

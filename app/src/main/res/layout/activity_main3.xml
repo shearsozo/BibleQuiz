@@ -1,98 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.android.biblequiz.Main3Activity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginVertical="@dimen/image_margin"
-        android:orientation="vertical"
-        >
+    <LinearLayout style="@style/LinearStyle">
+
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/title2"
-            android:textAllCaps="true"
-            android:textSize="@dimen/title_text"
-            />
+            style="@style/HeaderTextStyle"
+            android:text="@string/title2" />
+
         <ImageView
-            android:layout_width="@dimen/image_w"
-            android:layout_height="@dimen/image_h"
-            android:layout_gravity="center"
-            android:layout_marginHorizontal="@dimen/image_margin"
-            android:layout_marginVertical="@dimen/image_margin"
-            android:src="@drawable/famous"
-            />
+            style="@style/ImageStyle"
+            android:src="@drawable/famous" />
+        <!--I designed the image in Adobe Photoshop-->
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/question_margin_h"
-            android:layout_marginVertical="@dimen/question_margin_v"
-            android:text="@string/question2"
-            android:textColor="@android:color/black"
-            android:textSize="@dimen/question_text"
-            />
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/question_margin_h"
-            android:layout_marginVertical="@dimen/question_margin_h"
-            android:orientation="vertical"
-            >
+            style="@style/QuestionTextStyle"
+            android:text="@string/question2" />
+
+        <LinearLayout style="@style/CheckboxStyle">
+
             <CheckBox
                 android:id="@+id/checkanswer2a"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/answer2a"
-                android:textSize="@dimen/answer_text"
-                />
+                style="@style/AnswerChoicesStyle"
+                android:text="@string/answer2a" />
+
             <CheckBox
                 android:id="@+id/checkanswer2b"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/answer2b"
-                android:textSize="@dimen/answer_text"
-                />
+                style="@style/AnswerChoicesStyle"
+                android:text="@string/answer2b" />
+
             <CheckBox
                 android:id="@+id/checkanswer2c"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/answer2c"
-                android:textSize="@dimen/answer_text"
-                />
+                style="@style/AnswerChoicesStyle"
+                android:text="@string/answer2c" />
+
             <CheckBox
                 android:id="@+id/checkanswer2d"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/answer2d"
-                android:textSize="@dimen/answer_text"
-                />
+                style="@style/AnswerChoicesStyle"
+                android:text="@string/answer2d" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/show_text_view"
+            style="@style/ShowStyle"
+            android:text=" " />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/button_margin"
             android:layout_gravity="center"
-            android:orientation="horizontal"
-            >
+            android:layout_marginBottom="24dp"
+            android:orientation="horizontal">
+
             <Button
                 android:id="@+id/previous2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/buttonPrev"
-                />
+                android:text="@string/buttonPrev" />
+
+            <Button
+                android:id="@+id/show_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="showAnswer"
+                android:text="Show Answer" />
+
             <Button
                 android:id="@+id/next2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/buttonNext"
-                />
+                android:text="@string/buttonNext" />
         </LinearLayout>
 
     </LinearLayout>

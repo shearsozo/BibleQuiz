@@ -1,6 +1,7 @@
 package com.example.android.biblequiz;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,8 +9,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
 public class Main3Activity extends AppCompatActivity {
+    /**
+     * Method to navigate to different activity page when button is click.
+     */
+    public Button next2;
+    public Button previous2;
     /**
      * Variable to hold the amount of correct answers.
      */
@@ -18,7 +25,6 @@ public class Main3Activity extends AppCompatActivity {
     CheckBox q2b_correct;
     CheckBox q2c_correct;
     CheckBox q2d_correct;
-
     /**
      * Declare placeholder for user answer in global variables
      */
@@ -29,12 +35,6 @@ public class Main3Activity extends AppCompatActivity {
     String answer5;
     String answer6;
     String answer7;
-
-    /**
-     * Method to navigate to different activity page when button is click.
-     */
-    public Button next2;
-    public Button previous2;
 
     public void gotopage() {
         next2 = (Button) findViewById(R.id.next2);
@@ -93,6 +93,15 @@ public class Main3Activity extends AppCompatActivity {
         Log.v("load_answer", "answer7:" + answer7);
         if (answer2 != null) reloadCheckBoxFromUserAnswer(answer2);
         gotopage();
+    }
+
+    /**
+     * This method is called when the answer button is clicked.
+     */
+    public void showAnswer(View view) {
+        TextView textView = (TextView) findViewById(R.id.show_text_view);
+        textView.setText("All answers are correct");
+        textView.setTextColor(Color.RED);
     }
 
     /**

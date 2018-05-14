@@ -1,12 +1,14 @@
 package com.example.android.biblequiz;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.TextView;
 
 public class Main6Activity extends AppCompatActivity {
     /**
@@ -92,6 +94,15 @@ public class Main6Activity extends AppCompatActivity {
         Log.v("load_answer", "answer7:" + answer7);
         if (answer5 != null) reloadCheckBoxFromUserAnswer(answer5);
         gotopage();
+    }
+
+    /**
+     * This method is called when the answer button is clicked.
+     */
+    public void showAnswer(View view) {
+        TextView textView = (TextView) findViewById(R.id.show_text_view);
+        textView.setText("All correct except image");
+        textView.setTextColor(Color.RED);
     }
 
     /**

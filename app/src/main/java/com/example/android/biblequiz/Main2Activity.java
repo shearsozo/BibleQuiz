@@ -2,6 +2,7 @@ package com.example.android.biblequiz;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,7 +10,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.text.NumberFormat;
 
 public class Main2Activity extends AppCompatActivity {
     /**
@@ -89,6 +93,16 @@ public class Main2Activity extends AppCompatActivity {
             correct++;
         }
     }
+
+    /**
+     * This method is called when the answer button is clicked.
+     */
+    public void showAnswer(View view) {
+        TextView textView = (TextView) findViewById(R.id.show_text_view);
+        textView.setText("The Gideons");
+        textView.setTextColor(Color.RED);
+    }
+
 
     /*
      Pass in the radio button group reference and return the index of the checked radio button

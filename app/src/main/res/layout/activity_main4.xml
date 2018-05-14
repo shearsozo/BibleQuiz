@@ -1,95 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.android.biblequiz.Main4Activity">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginVertical="@dimen/image_margin"
-        android:orientation="vertical"
-        >
+
+    <LinearLayout style="@style/LinearStyle">
+
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            style="@style/HeaderTextStyle"
             android:text="@string/title3"
-            android:textAllCaps="true"
-            android:textSize="@dimen/title_text"
+
             />
+
         <ImageView
-            android:layout_width="@dimen/image_w"
-            android:layout_height="@dimen/image_h"
-            android:layout_gravity="center"
-            android:layout_marginHorizontal="@dimen/image_margin"
-            android:layout_marginVertical="@dimen/image_margin"
-            android:src="@drawable/movie"
-            />
+            style="@style/ImageStyle"
+            android:src="@drawable/movie" />
+        <!--"https://thriftshopperforpeace.wordpress.com/2015/01/16/take-me-out-to-the-movies/", "5/10/18"-->
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/question_margin_h"
-            android:layout_marginVertical="@dimen/question_margin_v"
+            style="@style/QuestionTextStyle"
             android:text="@string/question3"
-            android:textColor="@android:color/black"
-            android:textSize="@dimen/question_text"
+
             />
+
         <RadioGroup
             android:id="@+id/rgAnswer3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/question_margin_h"
-            android:layout_marginVertical="@dimen/question_margin_h"
-            >
+            style="@style/RadioGroupStyle">
+
             <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/answer3a"
-                android:textSize="@dimen/answer_text"
-                />
+                style="@style/AnswerChoicesStyle"
+                android:text="@string/answer3a" />
+
             <RadioButton
                 android:id="@+id/answer3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/answer3b"
-                android:textSize="@dimen/answer_text"
-                />
+                style="@style/AnswerChoicesStyle"
+                android:text="@string/answer3b" />
+
             <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/answer3c"
-                android:textSize="@dimen/answer_text"
-                />
+                style="@style/AnswerChoicesStyle"
+                android:text="@string/answer3c" />
+
             <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/answer3d"
-                android:textSize="@dimen/answer_text"
-                />
+                style="@style/AnswerChoicesStyle"
+                android:text="@string/answer3d" />
         </RadioGroup>
+
+        <TextView
+            android:id="@+id/show_text_view"
+            style="@style/ShowStyle"
+            android:text=" " />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/button_margin"
             android:layout_gravity="center"
-            android:orientation="horizontal"
-            >
+            android:layout_marginBottom="24dp"
+            android:orientation="horizontal">
+
             <Button
                 android:id="@+id/previous3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/buttonPrev"
-                />
+                android:text="@string/buttonPrev" />
+
+            <Button
+                android:id="@+id/show_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="showAnswer"
+                android:text="Show Answer" />
+
             <Button
                 android:id="@+id/next3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/buttonNext"
-                />
+                android:text="@string/buttonNext" />
         </LinearLayout>
 
     </LinearLayout>
