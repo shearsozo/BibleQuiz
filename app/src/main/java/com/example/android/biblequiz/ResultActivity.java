@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class ResultActivity extends AppCompatActivity {
@@ -54,10 +55,18 @@ public class ResultActivity extends AppCompatActivity {
          * Method to calculate score
          */
         correct = calculateFinalScore();
-        String scoreMessage = "You got " + Integer.toString(correct) + "/7 correct!";
-        popToast(scoreMessage);
+        if (correct < 7) {
+            String scoreMessage = "You got " + Integer.toString(correct) + "/7 correct!";
+            popToast(scoreMessage);
+        }
+        else {
+            TextView textView = (TextView) findViewById(R.id.ending_comment);
+            textView.setText("Wow! You got all correct!");
+
+        }
         gotopage();
     }
+
 
     /**
      * pop up toast message

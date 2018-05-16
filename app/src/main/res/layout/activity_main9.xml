@@ -25,6 +25,7 @@
 
         <TextView
             style="@style/QuestionTextStyle"
+            android:id="@+id/ending_comment"
             android:layout_gravity="center"
             android:text="@string/endingcomment" />
 
