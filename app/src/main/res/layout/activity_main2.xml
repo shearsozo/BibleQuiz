@@ -65,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="showAnswer"
-                android:text="Show Answer" />
+                android:text="@string/buttonShow" />
 
             <Button
                 android:id="@+id/next1"

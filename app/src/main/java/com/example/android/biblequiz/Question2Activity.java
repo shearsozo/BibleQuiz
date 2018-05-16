@@ -78,7 +78,7 @@ public class Question2Activity extends AppCompatActivity {
      */
     public void showAnswer(View view) {
         TextView textView = (TextView) findViewById(R.id.show_text_view);
-        textView.setText("All answers are correct");
+        textView.setText(R.string.show_answer_question2);
         textView.setTextColor(Color.RED);
     }
 

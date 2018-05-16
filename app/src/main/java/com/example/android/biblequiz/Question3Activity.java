@@ -19,7 +19,7 @@ public class Question3Activity extends AppCompatActivity {
     /**
      * Variable to hold the amount of correct answers.
      */
-    int correct = 0;
+    int correct;
     RadioGroup q3_rGroup;
     /**
      * Declare placeholder for user answer in global variables
@@ -79,7 +79,7 @@ public class Question3Activity extends AppCompatActivity {
      */
     public void showAnswer(View view) {
         TextView textView = (TextView) findViewById(R.id.show_text_view);
-        textView.setText("The Matrix");
+        textView.setText(R.string.answer3b);
         textView.setTextColor(Color.RED);
     }
 

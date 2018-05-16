@@ -29,18 +29,20 @@
     <string name="answer3c">Wholly Moses!</string>
     <string name="answer3d">Transformers</string>
     <string name="answer4">case sensitive</string>
+    <string name="answer4_text_input">God</string>
     <string name="answer5a">historical</string>
     <string name="answer5b">letter</string>
     <string name="answer5c">image</string>
     <string name="answer5d">witness account</string>
-    <string name="answer6a">true</string>
-    <string name="answer6b">false</string>
+    <string name="answer6_text_input">world</string>
     <string name="answer7a">BB King</string>
     <string name="answer7b">Jimmy Hendrix</string>
     <string name="answer7c">Pete Townsend</string>
     <string name="answer7d">Bob Marley</string>
     <string name="buttonPrev">previous</string>
+    <string name="buttonShow">Show Answer</string>
     <string name="buttonNext">next</string>
     <string name="buttonFinish">finish</string>
     <string name="buttonStartOver">start over</string>
+    <string name="show_answer_question2">All answers are correct</string>
 </resources>

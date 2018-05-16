@@ -2,12 +2,11 @@ package com.example.android.biblequiz;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class ResultActivity extends AppCompatActivity {
@@ -18,7 +17,7 @@ public class ResultActivity extends AppCompatActivity {
     /**
      * Variable to hold the amount of correct answers.
      */
-    int correct = 0;
+    int correct;
     /**
      * Declare placeholder for user answer in global variables
      */
@@ -43,6 +42,7 @@ public class ResultActivity extends AppCompatActivity {
             }
         });
     }
+    private static final int questions_number = 7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,11 +51,12 @@ public class ResultActivity extends AppCompatActivity {
 
         loadAnswerFromMyIntend();
 
+
         /**
          * Method to calculate score
          */
         correct = calculateFinalScore();
-        if (correct < 7) {
+        if (correct < questions_number) {
             String scoreMessage = "You got " + Integer.toString(correct) + " out of 7 correct!";
             popToast(scoreMessage);
         }

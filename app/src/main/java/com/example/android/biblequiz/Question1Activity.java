@@ -18,7 +18,7 @@ public class Question1Activity extends AppCompatActivity {
     /**
      * Variable to hold the amount of correct answers.
      */
-    int correct = 0;
+    int correct;
     RadioGroup q1_rGroup;
     //Declare placeholder for user answer
     String answer1;
@@ -77,7 +77,7 @@ public class Question1Activity extends AppCompatActivity {
      */
     public void showAnswer(View view) {
         TextView textView = (TextView) findViewById(R.id.show_text_view);
-        textView.setText("The Gideons");
+        textView.setText(R.string.answer1c);
         textView.setTextColor(Color.RED);
     }
 

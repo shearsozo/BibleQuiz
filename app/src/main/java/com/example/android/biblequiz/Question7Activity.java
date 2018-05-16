@@ -19,7 +19,7 @@ public class Question7Activity extends AppCompatActivity {
     /**
      * Variable to hold the amount of correct answers.
      */
-    int correct = 0;
+    int correct;
     RadioGroup q7_rGroup;
     /**
      * Declare placeholder for user answer
@@ -79,7 +79,7 @@ public class Question7Activity extends AppCompatActivity {
      */
     public void showAnswer(View view) {
         TextView textView = (TextView) findViewById(R.id.show_text_view);
-        textView.setText("Bob Marley");
+        textView.setText(R.string.answer7d);
         textView.setTextColor(Color.RED);
     }
 
