@@ -24,7 +24,6 @@ public class Main2Activity extends AppCompatActivity {
      * Variable to hold the amount of correct answers.
      */
     int correct = 0;
-    RadioButton q1_correct;
     RadioGroup q1_rGroup;
     //Declare placeholder for user answer
     String answer1;
@@ -42,16 +41,9 @@ public class Main2Activity extends AppCompatActivity {
             public void onClick(View view) {
                 //get the index of the checked radio group and cast it to string
                 answer1 = String.valueOf(getRadioButtonSelection(q1_rGroup));
-                Log.v("set_answer", "answer1:" + answer1);
-                Log.v("set_answer", "answer2:" + answer2);
-                Log.v("set_answer", "answer3:" + answer3);
-                Log.v("set_answer", "answer4:" + answer4);
-                Log.v("set_answer", "answer5:" + answer5);
-                Log.v("set_answer", "answer6:" + answer6);
-                Log.v("set_answer", "answer7:" + answer7);
 
-                Intent agape = new Intent(Main2Activity.this, Main3Activity.class);
-                dressUpIntent(agape);
+                Intent i = new Intent(Main2Activity.this, Main3Activity.class);
+                dressUpIntent(i);
             }
         });
     }
@@ -61,17 +53,8 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        q1_rGroup = findViewById(R.id.rgAnswer1);
-        Log.v("load_answer", "load from intent at main2");
+        q1_rGroup = findViewById(R.id.radioGroup1);
         loadAnswerFromMyIntend();
-
-        Log.v("load_answer", "answer1:" + answer1);
-        Log.v("load_answer", "answer2:" + answer2);
-        Log.v("load_answer", "answer3:" + answer3);
-        Log.v("load_answer", "answer4:" + answer4);
-        Log.v("load_answer", "answer5:" + answer5);
-        Log.v("load_answer", "answer6:" + answer6);
-        Log.v("load_answer", "answer7:" + answer7);
 
         /*
         If answer1 has some answer, then preselect.
@@ -102,7 +85,6 @@ public class Main2Activity extends AppCompatActivity {
         textView.setText("The Gideons");
         textView.setTextColor(Color.RED);
     }
-
 
     /*
      Pass in the radio button group reference and return the index of the checked radio button

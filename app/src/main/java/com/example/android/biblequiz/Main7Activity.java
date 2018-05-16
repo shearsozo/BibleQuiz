@@ -21,7 +21,6 @@ public class Main7Activity extends AppCompatActivity {
      */
     int correct = 0;
     EditText q6_correct;
-    String user_answer6;
     /**
      * Declare placeholder for user answer in global variables
      */
@@ -40,30 +39,18 @@ public class Main7Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 questionSix();
-                Log.v("set_answer", "answer1:" + answer1);
-                Log.v("set_answer", "answer2:" + answer2);
-                Log.v("set_answer", "answer3:" + answer3);
-                Log.v("set_answer", "answer4:" + answer4);
-                Log.v("set_answer", "answer5:" + answer5);
-                Log.v("set_answer", "answer6:" + answer6);
-                Log.v("set_answer", "answer7:" + answer7);
-                Intent agape = new Intent(Main7Activity.this, Main8Activity.class);
-                dressUpIntent(agape);
+
+                Intent i = new Intent(Main7Activity.this, Main8Activity.class);
+                dressUpIntent(i);
             }
         });
         previous6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 questionSix();
-                Log.v("set_answer", "answer1:" + answer1);
-                Log.v("set_answer", "answer2:" + answer2);
-                Log.v("set_answer", "answer3:" + answer3);
-                Log.v("set_answer", "answer4:" + answer4);
-                Log.v("set_answer", "answer5:" + answer5);
-                Log.v("set_answer", "answer6:" + answer6);
-                Log.v("set_answer", "answer7:" + answer7);
-                Intent agape = new Intent(Main7Activity.this, Main6Activity.class);
-                dressUpIntent(agape);
+
+                Intent i = new Intent(Main7Activity.this, Main6Activity.class);
+                dressUpIntent(i);
             }
         });
     }
@@ -74,15 +61,8 @@ public class Main7Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main7);
         q6_correct = findViewById(R.id.answer6);
 
-        Log.v("load_answer", "load from intent at main7");
         loadAnswerFromMyIntend();
-        Log.v("load_answer", "answer1:" + answer1);
-        Log.v("load_answer", "answer2:" + answer2);
-        Log.v("load_answer", "answer3:" + answer3);
-        Log.v("load_answer", "answer4:" + answer4);
-        Log.v("load_answer", "answer5:" + answer5);
-        Log.v("load_answer", "answer6:" + answer6);
-        Log.v("load_answer", "answer7:" + answer7);
+
         if (answer6 != null) {
             q6_correct.setText(answer6);
         }

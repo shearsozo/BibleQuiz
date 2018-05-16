@@ -12,11 +12,15 @@ import android.widget.TextView;
 
 public class Main5Activity extends AppCompatActivity {
     /**
+     * Method to navigate to different activity page when button is click.
+     */
+    public Button next4;
+    public Button previous4;
+    /**
      * Variable to hold the amount of correct answers.
      */
     int correct = 0;
     EditText q4_correct;
-    String user_answer4;
     /**
      * Declare placeholder for user answer in global variables
      */
@@ -28,12 +32,6 @@ public class Main5Activity extends AppCompatActivity {
     String answer6;
     String answer7;
 
-    /**
-     * Method to navigate to different activity page when button is click.
-     */
-    public Button next4;
-    public Button previous4;
-
     public void gotopage() {
         next4 = (Button) findViewById(R.id.next4);
         previous4 = (Button) findViewById(R.id.previous4);
@@ -42,15 +40,9 @@ public class Main5Activity extends AppCompatActivity {
             public void onClick(View view) {
 
                 questionFour();
-                Log.v("set_answer", "answer1:" + answer1);
-                Log.v("set_answer", "answer2:" + answer2);
-                Log.v("set_answer", "answer3:" + answer3);
-                Log.v("set_answer", "answer4:" + answer4);
-                Log.v("set_answer", "answer5:" + answer5);
-                Log.v("set_answer", "answer6:" + answer6);
-                Log.v("set_answer", "answer7:" + answer7);
-                Intent agape = new Intent(Main5Activity.this, Main6Activity.class);
-                dressUpIntent(agape);
+
+                Intent i = new Intent(Main5Activity.this, Main6Activity.class);
+                dressUpIntent(i);
             }
         });
         previous4.setOnClickListener(new View.OnClickListener() {
@@ -58,15 +50,9 @@ public class Main5Activity extends AppCompatActivity {
             public void onClick(View view) {
 
                 questionFour();
-                Log.v("set_answer", "answer1:" + answer1);
-                Log.v("set_answer", "answer2:" + answer2);
-                Log.v("set_answer", "answer3:" + answer3);
-                Log.v("set_answer", "answer4:" + answer4);
-                Log.v("set_answer", "answer5:" + answer5);
-                Log.v("set_answer", "answer6:" + answer6);
-                Log.v("set_answer", "answer7:" + answer7);
-                Intent agape = new Intent(Main5Activity.this, Main4Activity.class);
-                dressUpIntent(agape);
+
+                Intent i = new Intent(Main5Activity.this, Main4Activity.class);
+                dressUpIntent(i);
             }
         });
     }
@@ -76,15 +62,9 @@ public class Main5Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main5);
         q4_correct = findViewById(R.id.answer4);
-        Log.v("load_answer", "load from intent at main5");
+
         loadAnswerFromMyIntend();
-        Log.v("load_answer", "answer1:" + answer1);
-        Log.v("load_answer", "answer2:" + answer2);
-        Log.v("load_answer", "answer3:" + answer3);
-        Log.v("load_answer", "answer4:" + answer4);
-        Log.v("load_answer", "answer5:" + answer5);
-        Log.v("load_answer", "answer6:" + answer6);
-        Log.v("load_answer", "answer7:" + answer7);
+
         if (answer4 != null) {
             q4_correct.setText(answer4);
         }

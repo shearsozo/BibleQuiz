@@ -13,10 +13,14 @@ import android.widget.TextView;
 
 public class Main8Activity extends AppCompatActivity {
     /**
+     * Method to navigate to different activity page when button is click.
+     */
+    public Button next7;
+    public Button previous7;
+    /**
      * Variable to hold the amount of correct answers.
      */
     int correct = 0;
-    RadioButton q7_correct;
     RadioGroup q7_rGroup;
     /**
      * Declare placeholder for user answer
@@ -28,11 +32,6 @@ public class Main8Activity extends AppCompatActivity {
     String answer5;
     String answer6;
     String answer7;
-    /**
-     * Method to navigate to different activity page when button is click.
-     */
-    public Button next7;
-    public Button previous7;
 
     public void gotopage() {
         next7 = (Button) findViewById(R.id.next7);
@@ -42,30 +41,18 @@ public class Main8Activity extends AppCompatActivity {
             public void onClick(View view) {
                 //get the index of the checked radio group and cast to string
                 answer7 = String.valueOf(getRadioButtonSelection(q7_rGroup));
-                Log.v("set_answer", "answer1:" + answer1);
-                Log.v("set_answer", "answer2:" + answer2);
-                Log.v("set_answer", "answer3:" + answer3);
-                Log.v("set_answer", "answer4:" + answer4);
-                Log.v("set_answer", "answer5:" + answer5);
-                Log.v("set_answer", "answer6:" + answer6);
-                Log.v("set_answer", "answer7:" + answer7);
-                Intent agape = new Intent(Main8Activity.this, Main9Activity.class);
-                dressUpIntent(agape);
+
+                Intent i = new Intent(Main8Activity.this, Main9Activity.class);
+                dressUpIntent(i);
             }
         });
         previous7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 answer7 = String.valueOf(getRadioButtonSelection(q7_rGroup));
-                Log.v("set_answer", "answer1:" + answer1);
-                Log.v("set_answer", "answer2:" + answer2);
-                Log.v("set_answer", "answer3:" + answer3);
-                Log.v("set_answer", "answer4:" + answer4);
-                Log.v("set_answer", "answer5:" + answer5);
-                Log.v("set_answer", "answer6:" + answer6);
-                Log.v("set_answer", "answer7:" + answer7);
-                Intent agape = new Intent(Main8Activity.this, Main7Activity.class);
-                dressUpIntent(agape);
+
+                Intent i = new Intent(Main8Activity.this, Main7Activity.class);
+                dressUpIntent(i);
             }
         });
     }
@@ -74,16 +61,10 @@ public class Main8Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main8);
-        q7_rGroup = findViewById(R.id.rgAnswer7);
-        Log.v("load_answer", "load from intent at main8");
+        q7_rGroup = findViewById(R.id.radioGroup7);
+
         loadAnswerFromMyIntend();
-        Log.v("load_answer", "answer1:" + answer1);
-        Log.v("load_answer", "answer2:" + answer2);
-        Log.v("load_answer", "answer3:" + answer3);
-        Log.v("load_answer", "answer4:" + answer4);
-        Log.v("load_answer", "answer5:" + answer5);
-        Log.v("load_answer", "answer6:" + answer6);
-        Log.v("load_answer", "answer7:" + answer7);
+
         /*
         If answer7 has some answer, then preselect
          */

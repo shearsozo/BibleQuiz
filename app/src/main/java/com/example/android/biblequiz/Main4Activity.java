@@ -21,7 +21,6 @@ public class Main4Activity extends AppCompatActivity {
      * Variable to hold the amount of correct answers.
      */
     int correct = 0;
-    RadioButton q3_correct;
     RadioGroup q3_rGroup;
     /**
      * Declare placeholder for user answer in global variables
@@ -42,30 +41,18 @@ public class Main4Activity extends AppCompatActivity {
             public void onClick(View view) {
                 //get the index of the checked radio group and cast to string
                 answer3 = String.valueOf(getRadioButtonSelection(q3_rGroup));
-                Log.v("set_answer", "answer1:" + answer1);
-                Log.v("set_answer", "answer2:" + answer2);
-                Log.v("set_answer", "answer3:" + answer3);
-                Log.v("set_answer", "answer4:" + answer4);
-                Log.v("set_answer", "answer5:" + answer5);
-                Log.v("set_answer", "answer6:" + answer6);
-                Log.v("set_answer", "answer7:" + answer7);
-                Intent agape = new Intent(Main4Activity.this, Main5Activity.class);
-                dressUpIntent(agape);
+
+                Intent i = new Intent(Main4Activity.this, Main5Activity.class);
+                dressUpIntent(i);
             }
         });
         previous3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 answer3 = String.valueOf(getRadioButtonSelection(q3_rGroup));
-                Log.v("set_answer", "answer1:" + answer1);
-                Log.v("set_answer", "answer2:" + answer2);
-                Log.v("set_answer", "answer3:" + answer3);
-                Log.v("set_answer", "answer4:" + answer4);
-                Log.v("set_answer", "answer5:" + answer5);
-                Log.v("set_answer", "answer6:" + answer6);
-                Log.v("set_answer", "answer7:" + answer7);
-                Intent agape = new Intent(Main4Activity.this, Main3Activity.class);
-                dressUpIntent(agape);
+
+                Intent i = new Intent(Main4Activity.this, Main3Activity.class);
+                dressUpIntent(i);
             }
         });
     }
@@ -75,16 +62,9 @@ public class Main4Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
 
-        q3_rGroup = findViewById(R.id.rgAnswer3);
-        Log.v("load_answer", "load from intent at main4");
+        q3_rGroup = findViewById(R.id.radioGroup3);
         loadAnswerFromMyIntend();
-        Log.v("load_answer", "answer1:" + answer1);
-        Log.v("load_answer", "answer2:" + answer2);
-        Log.v("load_answer", "answer3:" + answer3);
-        Log.v("load_answer", "answer4:" + answer4);
-        Log.v("load_answer", "answer5:" + answer5);
-        Log.v("load_answer", "answer6:" + answer6);
-        Log.v("load_answer", "answer7:" + answer7);
+
         /*
         If answer3 has some answer, then preselect.
          */

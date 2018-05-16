@@ -17,8 +17,8 @@ public class MainActivity extends AppCompatActivity {
         start_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent agape = new Intent(MainActivity.this, Main2Activity.class);
-                startActivity(agape);
+                Intent i = new Intent(MainActivity.this, Main2Activity.class);
+                startActivity(i);
             }
         });
     }

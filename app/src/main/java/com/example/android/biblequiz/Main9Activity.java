@@ -40,9 +40,9 @@ public class Main9Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent agape = new Intent(Main9Activity.this, MainActivity.class);
-                Log.v("start_button", "I have pressed my start button");
-                startActivity(agape);
+                Intent i = new Intent(Main9Activity.this, MainActivity.class);
+
+                startActivity(i);
             }
         });
     }
@@ -51,15 +51,9 @@ public class Main9Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main9);
-        Log.v("load_answer", "load from intent at main9");
+
         loadAnswerFromMyIntend();
-        Log.v("load_answer", "answer1:" + answer1);
-        Log.v("load_answer", "answer2:" + answer2);
-        Log.v("load_answer", "answer3:" + answer3);
-        Log.v("load_answer", "answer4:" + answer4);
-        Log.v("load_answer", "answer5:" + answer5);
-        Log.v("load_answer", "answer6:" + answer6);
-        Log.v("load_answer", "answer7:" + answer7);
+
         /**
          * Method to calculate score
          */

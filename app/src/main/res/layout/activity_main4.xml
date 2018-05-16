@@ -25,7 +25,7 @@
             />
 
         <RadioGroup
-            android:id="@+id/rgAnswer3"
+            android:id="@+id/radioGroup3"
             style="@style/RadioGroupStyle">
 
             <RadioButton

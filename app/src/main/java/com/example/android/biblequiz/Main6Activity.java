@@ -20,10 +20,10 @@ public class Main6Activity extends AppCompatActivity {
      * Variable to hold the amount of correct answers.
      */
     int correct = 0;
-    CheckBox q5a_correct;
-    CheckBox q5b_correct;
-    CheckBox q5c_correct;
-    CheckBox q5d_correct;
+    CheckBox question5a_correct;
+    CheckBox question5b_correct;
+    CheckBox question5c_correct;
+    CheckBox question5d_correct;
     /**
      * Declare placeholder for user answer in global variables
      */
@@ -42,30 +42,18 @@ public class Main6Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 answer5 = getCheckBoxAnswers();
-                Log.v("set_answer", "answer1:" + answer1);
-                Log.v("set_answer", "answer2:" + answer2);
-                Log.v("set_answer", "answer3:" + answer3);
-                Log.v("set_answer", "answer4:" + answer4);
-                Log.v("set_answer", "answer5:" + answer5);
-                Log.v("set_answer", "answer6:" + answer6);
-                Log.v("set_answer", "answer7:" + answer7);
-                Intent agape = new Intent(Main6Activity.this, Main7Activity.class);
-                dressUpIntent(agape);
+
+                Intent i = new Intent(Main6Activity.this, Main7Activity.class);
+                dressUpIntent(i);
             }
         });
         previous5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 answer5 = getCheckBoxAnswers();
-                Log.v("set_answer", "answer1:" + answer1);
-                Log.v("set_answer", "answer2:" + answer2);
-                Log.v("set_answer", "answer3:" + answer3);
-                Log.v("set_answer", "answer4:" + answer4);
-                Log.v("set_answer", "answer5:" + answer5);
-                Log.v("set_answer", "answer6:" + answer6);
-                Log.v("set_answer", "answer7:" + answer7);
-                Intent agape = new Intent(Main6Activity.this, Main5Activity.class);
-                dressUpIntent(agape);
+
+                Intent i = new Intent(Main6Activity.this, Main5Activity.class);
+                dressUpIntent(i);
             }
         });
 
@@ -76,10 +64,10 @@ public class Main6Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main6);
         // only checkbox a, b, d is correct
-        q5a_correct = findViewById(R.id.checkanswer5a);
-        q5b_correct = findViewById(R.id.checkanswer5b);
-        q5c_correct = findViewById(R.id.checkanswer5c);
-        q5d_correct = findViewById(R.id.checkanswer5d);
+        question5a_correct = findViewById(R.id.checkanswer5a);
+        question5b_correct = findViewById(R.id.checkanswer5b);
+        question5c_correct = findViewById(R.id.checkanswer5c);
+        question5d_correct = findViewById(R.id.checkanswer5d);
         /**
          * reload the answer from intend
          */
@@ -148,17 +136,16 @@ public class Main6Activity extends AppCompatActivity {
      */
     public String getCheckBoxAnswers() {
         String q5Answer = "";
-        if (q5a_correct.isChecked())
+        if (question5a_correct.isChecked())
             q5Answer = "1";
         q5Answer = q5Answer + "|";
-        if (q5b_correct.isChecked())
+        if (question5b_correct.isChecked())
             q5Answer = q5Answer + "2";
         q5Answer = q5Answer + "|";
-
-        if (q5c_correct.isChecked())
+        if (question5c_correct.isChecked())
             q5Answer = q5Answer + "3";
         q5Answer = q5Answer + "|";
-        if (q5d_correct.isChecked())
+        if (question5d_correct.isChecked())
             q5Answer = q5Answer + "4";
         return q5Answer;
     }
@@ -177,9 +164,9 @@ public class Main6Activity extends AppCompatActivity {
      * This method will use the markCheckBoxSelection to check against all the checkboxes
      */
     public void reloadCheckBoxFromUserAnswer(String userAnswer) {
-        markCheckBoxSelection(q5a_correct, userAnswer, "1");
-        markCheckBoxSelection(q5b_correct, userAnswer, "2");
-        markCheckBoxSelection(q5c_correct, userAnswer, "3");
-        markCheckBoxSelection(q5d_correct, userAnswer, "4");
+        markCheckBoxSelection(question5a_correct, userAnswer, "1");
+        markCheckBoxSelection(question5b_correct, userAnswer, "2");
+        markCheckBoxSelection(question5c_correct, userAnswer, "3");
+        markCheckBoxSelection(question5d_correct, userAnswer, "4");
     }
 }

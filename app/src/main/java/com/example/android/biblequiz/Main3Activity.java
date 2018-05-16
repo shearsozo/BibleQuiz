@@ -21,10 +21,10 @@ public class Main3Activity extends AppCompatActivity {
      * Variable to hold the amount of correct answers.
      */
     int correct = 0;
-    CheckBox q2a_correct;
-    CheckBox q2b_correct;
-    CheckBox q2c_correct;
-    CheckBox q2d_correct;
+    CheckBox question2a_correct;
+    CheckBox question2b_correct;
+    CheckBox question2c_correct;
+    CheckBox question2d_correct;
     /**
      * Declare placeholder for user answer in global variables
      */
@@ -43,30 +43,18 @@ public class Main3Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 answer2 = getCheckBoxAnswers();
-                Log.v("set_answer", "answer1:" + answer1);
-                Log.v("set_answer", "answer2:" + answer2);
-                Log.v("set_answer", "answer3:" + answer3);
-                Log.v("set_answer", "answer4:" + answer4);
-                Log.v("set_answer", "answer5:" + answer5);
-                Log.v("set_answer", "answer6:" + answer6);
-                Log.v("set_answer", "answer7:" + answer7);
-                Intent agape = new Intent(Main3Activity.this, Main4Activity.class);
-                dressUpIntent(agape);
+
+                Intent i = new Intent(Main3Activity.this, Main4Activity.class);
+                dressUpIntent(i);
             }
         });
         previous2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 answer2 = getCheckBoxAnswers();
-                Log.v("set_answer", "answer1:" + answer1);
-                Log.v("set_answer", "answer2:" + answer2);
-                Log.v("set_answer", "answer3:" + answer3);
-                Log.v("set_answer", "answer4:" + answer4);
-                Log.v("set_answer", "answer5:" + answer5);
-                Log.v("set_answer", "answer6:" + answer6);
-                Log.v("set_answer", "answer7:" + answer7);
-                Intent agape = new Intent(Main3Activity.this, Main2Activity.class);
-                dressUpIntent(agape);
+
+                Intent i = new Intent(Main3Activity.this, Main2Activity.class);
+                dressUpIntent(i);
             }
         });
     }
@@ -75,22 +63,15 @@ public class Main3Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
-        q2a_correct = findViewById(R.id.checkanswer2a);
-        q2b_correct = findViewById(R.id.checkanswer2b);
-        q2c_correct = findViewById(R.id.checkanswer2c);
-        q2d_correct = findViewById(R.id.checkanswer2d);
+        question2a_correct = findViewById(R.id.checkanswer2a);
+        question2b_correct = findViewById(R.id.checkanswer2b);
+        question2c_correct = findViewById(R.id.checkanswer2c);
+        question2d_correct = findViewById(R.id.checkanswer2d);
         /**
          * reload the answer from intend
          */
-        Log.v("load_answer", "load from intent at main3");
         loadAnswerFromMyIntend();
-        Log.v("load_answer", "answer1:" + answer1);
-        Log.v("load_answer", "answer2:" + answer2);
-        Log.v("load_answer", "answer3:" + answer3);
-        Log.v("load_answer", "answer4:" + answer4);
-        Log.v("load_answer", "answer5:" + answer5);
-        Log.v("load_answer", "answer6:" + answer6);
-        Log.v("load_answer", "answer7:" + answer7);
+
         if (answer2 != null) reloadCheckBoxFromUserAnswer(answer2);
         gotopage();
     }
@@ -146,16 +127,16 @@ public class Main3Activity extends AppCompatActivity {
      */
     public String getCheckBoxAnswers() {
         String q2Answer = "";
-        if (q2a_correct.isChecked())
+        if (question2a_correct.isChecked())
             q2Answer = "1";
         q2Answer = q2Answer + "|";
-        if (q2b_correct.isChecked())
+        if (question2b_correct.isChecked())
             q2Answer = q2Answer + "2";
         q2Answer = q2Answer + "|";
-        if (q2c_correct.isChecked())
+        if (question2c_correct.isChecked())
             q2Answer = q2Answer + "3";
         q2Answer = q2Answer + "|";
-        if (q2d_correct.isChecked())
+        if (question2d_correct.isChecked())
             q2Answer = q2Answer + "4";
         return q2Answer;
     }
@@ -174,10 +155,10 @@ public class Main3Activity extends AppCompatActivity {
      * This method will use the markCheckBoxSelection to check against all the checkboxes
      */
     public void reloadCheckBoxFromUserAnswer(String userAnswer) {
-        markCheckBoxSelection(q2a_correct, userAnswer, "1");
-        markCheckBoxSelection(q2b_correct, userAnswer, "2");
-        markCheckBoxSelection(q2c_correct, userAnswer, "3");
-        markCheckBoxSelection(q2d_correct, userAnswer, "4");
+        markCheckBoxSelection(question2a_correct, userAnswer, "1");
+        markCheckBoxSelection(question2b_correct, userAnswer, "2");
+        markCheckBoxSelection(question2c_correct, userAnswer, "3");
+        markCheckBoxSelection(question2d_correct, userAnswer, "4");
     }
 
 }
