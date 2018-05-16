@@ -56,13 +56,12 @@ public class ResultActivity extends AppCompatActivity {
          */
         correct = calculateFinalScore();
         if (correct < 7) {
-            String scoreMessage = "You got " + Integer.toString(correct) + "/7 correct!";
+            String scoreMessage = "You got " + Integer.toString(correct) + "out of 7 correct!";
             popToast(scoreMessage);
         }
         else {
-            TextView textView = (TextView) findViewById(R.id.ending_comment);
-            textView.setText("Wow! You got all correct!");
-
+            String scoreMessage = "Wow! You got all answers correct!";
+            popToast(scoreMessage);
         }
         gotopage();
     }
