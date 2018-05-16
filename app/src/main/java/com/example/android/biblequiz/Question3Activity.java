@@ -4,23 +4,23 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
-public class Main7Activity extends AppCompatActivity {
+public class Question3Activity extends AppCompatActivity {
     /**
      * Method to navigate to different activity page when button is click.
      */
-    public Button next6;
-    public Button previous6;
+    public Button next3;
+    public Button previous3;
     /**
      * Variable to hold the amount of correct answers.
      */
     int correct = 0;
-    EditText q6_correct;
+    RadioGroup q3_rGroup;
     /**
      * Declare placeholder for user answer in global variables
      */
@@ -33,23 +33,24 @@ public class Main7Activity extends AppCompatActivity {
     String answer7;
 
     public void gotopage() {
-        next6 = (Button) findViewById(R.id.next6);
-        previous6 = (Button) findViewById(R.id.previous6);
-        next6.setOnClickListener(new View.OnClickListener() {
+        next3 = (Button) findViewById(R.id.next3);
+        previous3 = (Button) findViewById(R.id.previous3);
+        next3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                questionSix();
+                //get the index of the checked radio group and cast to string
+                answer3 = String.valueOf(getRadioButtonSelection(q3_rGroup));
 
-                Intent i = new Intent(Main7Activity.this, Main8Activity.class);
+                Intent i = new Intent(Question3Activity.this, Question4Activity.class);
                 dressUpIntent(i);
             }
         });
-        previous6.setOnClickListener(new View.OnClickListener() {
+        previous3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                questionSix();
+                answer3 = String.valueOf(getRadioButtonSelection(q3_rGroup));
 
-                Intent i = new Intent(Main7Activity.this, Main6Activity.class);
+                Intent i = new Intent(Question3Activity.this, Question2Activity.class);
                 dressUpIntent(i);
             }
         });
@@ -58,13 +59,17 @@ public class Main7Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main7);
-        q6_correct = findViewById(R.id.answer6);
+        setContentView(R.layout.activity_main4);
 
+        q3_rGroup = findViewById(R.id.radioGroup3);
         loadAnswerFromMyIntend();
 
-        if (answer6 != null) {
-            q6_correct.setText(answer6);
+        /*
+        If answer3 has some answer, then preselect.
+         */
+        if (answer3 != null) {
+            int intAnswer1 = Integer.parseInt(answer3);
+            setRadioButtonByIndex(q3_rGroup, intAnswer1);
         }
         gotopage();
     }
@@ -74,17 +79,35 @@ public class Main7Activity extends AppCompatActivity {
      */
     public void showAnswer(View view) {
         TextView textView = (TextView) findViewById(R.id.show_text_view);
-        textView.setText("world");
+        textView.setText("The Matrix");
         textView.setTextColor(Color.RED);
     }
 
     /**
-     * Method to record correct answer for question 6.
+     * Method to record correct answer for question 3.
      */
-    public void questionSix() {
-        EditText q6_correct = findViewById(R.id.answer6);
-        answer6 = q6_correct.getText().toString();
+    public void questionThree() {
+        RadioButton q3_correct = findViewById(R.id.answer3);
 
+        if (q3_correct.isChecked()) {
+            correct++;
+        }
+    }
+
+    /**
+     * Pass in the radio button group reference and return the index of the checked radio button
+     * This index will be used as the answer
+     */
+    public int getRadioButtonSelection(RadioGroup vMyRGroup) {
+        int index = vMyRGroup.indexOfChild(findViewById(vMyRGroup.getCheckedRadioButtonId()));
+        return index;
+    }
+
+    /**
+     * Pass in the radio button group reference as well as the index of the radio button to check and set it
+     */
+    public void setRadioButtonByIndex(RadioGroup vMyRGroup, int checkedIndex) {
+        ((RadioButton) vMyRGroup.getChildAt(checkedIndex)).setChecked(true);
     }
 
     /**
@@ -118,5 +141,4 @@ public class Main7Activity extends AppCompatActivity {
         answer6 = getIntent().getStringExtra("answer6");
         answer7 = getIntent().getStringExtra("answer7");
     }
-
 }

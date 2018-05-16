@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.biblequiz.Main6Activity">
+    tools:context="com.example.android.biblequiz.Question5Activity">
 
     <LinearLayout style="@style/LinearStyle">
 

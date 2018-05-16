@@ -4,26 +4,24 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
-public class Main6Activity extends AppCompatActivity {
+public class Question2Activity extends AppCompatActivity {
     /**
      * Method to navigate to different activity page when button is click.
      */
-    public Button next5;
-    public Button previous5;
+    public Button next2;
+    public Button previous2;
     /**
      * Variable to hold the amount of correct answers.
      */
-    int correct = 0;
-    CheckBox question5a_correct;
-    CheckBox question5b_correct;
-    CheckBox question5c_correct;
-    CheckBox question5d_correct;
+    CheckBox question2a_correct;
+    CheckBox question2b_correct;
+    CheckBox question2c_correct;
+    CheckBox question2d_correct;
     /**
      * Declare placeholder for user answer in global variables
      */
@@ -36,51 +34,42 @@ public class Main6Activity extends AppCompatActivity {
     String answer7;
 
     public void gotopage() {
-        next5 = (Button) findViewById(R.id.next5);
-        previous5 = (Button) findViewById(R.id.previous5);
-        next5.setOnClickListener(new View.OnClickListener() {
+        next2 = (Button) findViewById(R.id.next2);
+        previous2 = (Button) findViewById(R.id.previous2);
+        next2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                answer5 = getCheckBoxAnswers();
+                answer2 = getCheckBoxAnswers();
 
-                Intent i = new Intent(Main6Activity.this, Main7Activity.class);
+                Intent i = new Intent(Question2Activity.this, Question3Activity.class);
                 dressUpIntent(i);
             }
         });
-        previous5.setOnClickListener(new View.OnClickListener() {
+        previous2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                answer5 = getCheckBoxAnswers();
+                answer2 = getCheckBoxAnswers();
 
-                Intent i = new Intent(Main6Activity.this, Main5Activity.class);
+                Intent i = new Intent(Question2Activity.this, Question1Activity.class);
                 dressUpIntent(i);
             }
         });
-
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main6);
-        // only checkbox a, b, d is correct
-        question5a_correct = findViewById(R.id.checkanswer5a);
-        question5b_correct = findViewById(R.id.checkanswer5b);
-        question5c_correct = findViewById(R.id.checkanswer5c);
-        question5d_correct = findViewById(R.id.checkanswer5d);
+        setContentView(R.layout.activity_main3);
+        question2a_correct = findViewById(R.id.checkanswer2a);
+        question2b_correct = findViewById(R.id.checkanswer2b);
+        question2c_correct = findViewById(R.id.checkanswer2c);
+        question2d_correct = findViewById(R.id.checkanswer2d);
         /**
          * reload the answer from intend
          */
-        Log.v("load_answer", "load from intent at main6");
         loadAnswerFromMyIntend();
-        Log.v("load_answer", "answer1:" + answer1);
-        Log.v("load_answer", "answer2:" + answer2);
-        Log.v("load_answer", "answer3:" + answer3);
-        Log.v("load_answer", "answer4:" + answer4);
-        Log.v("load_answer", "answer5:" + answer5);
-        Log.v("load_answer", "answer6:" + answer6);
-        Log.v("load_answer", "answer7:" + answer7);
-        if (answer5 != null) reloadCheckBoxFromUserAnswer(answer5);
+
+        if (answer2 != null) reloadCheckBoxFromUserAnswer(answer2);
         gotopage();
     }
 
@@ -89,14 +78,14 @@ public class Main6Activity extends AppCompatActivity {
      */
     public void showAnswer(View view) {
         TextView textView = (TextView) findViewById(R.id.show_text_view);
-        textView.setText("All correct except image");
+        textView.setText("All answers are correct");
         textView.setTextColor(Color.RED);
     }
 
     /**
      * This function will put all 7 answers into intent using the following syntax
      * myIntend.putExtra(“key”, “value”) //both key and value are string types
-     * then called calling this when you go to both next page and previous page
+     * then calling this when you go to both next page and previous page
      * startActivity(myIntent);
      */
     public void dressUpIntent(Intent vMyIntend) {
@@ -132,22 +121,21 @@ public class Main6Activity extends AppCompatActivity {
      * using something like "1|2|4" .
      * This way, when you calculate score for checkbox, you only need to check
      * if the string matches with your answer.
-     * In this case only checkbox c is the only not correct.
      */
     public String getCheckBoxAnswers() {
-        String q5Answer = "";
-        if (question5a_correct.isChecked())
-            q5Answer = "1";
-        q5Answer = q5Answer + "|";
-        if (question5b_correct.isChecked())
-            q5Answer = q5Answer + "2";
-        q5Answer = q5Answer + "|";
-        if (question5c_correct.isChecked())
-            q5Answer = q5Answer + "3";
-        q5Answer = q5Answer + "|";
-        if (question5d_correct.isChecked())
-            q5Answer = q5Answer + "4";
-        return q5Answer;
+        String q2Answer = "";
+        if (question2a_correct.isChecked())
+            q2Answer = "1";
+        q2Answer = q2Answer + "|";
+        if (question2b_correct.isChecked())
+            q2Answer = q2Answer + "2";
+        q2Answer = q2Answer + "|";
+        if (question2c_correct.isChecked())
+            q2Answer = q2Answer + "3";
+        q2Answer = q2Answer + "|";
+        if (question2d_correct.isChecked())
+            q2Answer = q2Answer + "4";
+        return q2Answer;
     }
 
     /**
@@ -164,9 +152,10 @@ public class Main6Activity extends AppCompatActivity {
      * This method will use the markCheckBoxSelection to check against all the checkboxes
      */
     public void reloadCheckBoxFromUserAnswer(String userAnswer) {
-        markCheckBoxSelection(question5a_correct, userAnswer, "1");
-        markCheckBoxSelection(question5b_correct, userAnswer, "2");
-        markCheckBoxSelection(question5c_correct, userAnswer, "3");
-        markCheckBoxSelection(question5d_correct, userAnswer, "4");
+        markCheckBoxSelection(question2a_correct, userAnswer, "1");
+        markCheckBoxSelection(question2b_correct, userAnswer, "2");
+        markCheckBoxSelection(question2c_correct, userAnswer, "3");
+        markCheckBoxSelection(question2d_correct, userAnswer, "4");
     }
+
 }

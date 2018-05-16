@@ -4,13 +4,12 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class Main5Activity extends AppCompatActivity {
+public class Question4Activity extends AppCompatActivity {
     /**
      * Method to navigate to different activity page when button is click.
      */
@@ -19,7 +18,6 @@ public class Main5Activity extends AppCompatActivity {
     /**
      * Variable to hold the amount of correct answers.
      */
-    int correct = 0;
     EditText q4_correct;
     /**
      * Declare placeholder for user answer in global variables
@@ -41,7 +39,7 @@ public class Main5Activity extends AppCompatActivity {
 
                 questionFour();
 
-                Intent i = new Intent(Main5Activity.this, Main6Activity.class);
+                Intent i = new Intent(Question4Activity.this, Question5Activity.class);
                 dressUpIntent(i);
             }
         });
@@ -51,7 +49,7 @@ public class Main5Activity extends AppCompatActivity {
 
                 questionFour();
 
-                Intent i = new Intent(Main5Activity.this, Main4Activity.class);
+                Intent i = new Intent(Question4Activity.this, Question3Activity.class);
                 dressUpIntent(i);
             }
         });

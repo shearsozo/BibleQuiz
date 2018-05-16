@@ -7,13 +7,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
-public class Main9Activity extends AppCompatActivity {
+public class ResultActivity extends AppCompatActivity {
     /**
      * Method to reset and navigate to first activity page when button is click.
      */
@@ -40,7 +36,7 @@ public class Main9Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(Main9Activity.this, MainActivity.class);
+                Intent i = new Intent(ResultActivity.this, StartActivity.class);
 
                 startActivity(i);
             }

@@ -1,21 +1,16 @@
 package com.example.android.biblequiz;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.text.NumberFormat;
-
-public class Main2Activity extends AppCompatActivity {
+public class Question1Activity extends AppCompatActivity {
     /**
      * Method to navigate to next activity page when button is click.
      */
@@ -42,7 +37,7 @@ public class Main2Activity extends AppCompatActivity {
                 //get the index of the checked radio group and cast it to string
                 answer1 = String.valueOf(getRadioButtonSelection(q1_rGroup));
 
-                Intent i = new Intent(Main2Activity.this, Main3Activity.class);
+                Intent i = new Intent(Question1Activity.this, Question2Activity.class);
                 dressUpIntent(i);
             }
         });
